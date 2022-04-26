@@ -1,0 +1,24 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>{{article.title_display}}</mat-card-title>
+        <mat-card-subtitle>{{article.journal}}</mat-card-subtitle>
+    </mat-card-header>
+    <div *ngIf="article.journal.indexOf('PLOS'); else noPlos">
+        <img mat-card-image src="assets/img/not_found.png" alt="Logo">
+    </div>
+    <ng-template #noPlos>
+        <img mat-card-image src="assets/img/plos.png" alt="Logo">
+    </ng-template>
+    <mat-card-content>
+        <p *ngIf="abstractToggle; else show">{{article.abstract}}</p>
+        <ng-template #show>
+            <p>Please, click on "Show Abstract" button for show the abstract of the article</p>
+        </ng-template>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-button color="light">Edit</button>
+        <button mat-button color="light" (click)="toggleShowAbstract()">Show Abstract</button>
+        <button mat-button color="light">Cancel</button>
+    </mat-card-actions>
+</mat-card>
+

@@ -1,0 +1,9 @@
+<h1>Listado de artículos</h1>
+<mat-divider></mat-divider>
+<br />
+<div>
+  <app-edit-card></app-edit-card>
+</div>
+<div *ngFor="let article of articles">
+  <app-card [article]="article" (removeCard)="removeCard(article.id)" (editCard)="editCard(article.id)" (clearEdit)="clear()" ></app-card>
+</div>
