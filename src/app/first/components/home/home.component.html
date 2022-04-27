@@ -2,8 +2,11 @@
 <mat-divider></mat-divider>
 <br />
 <div>
-  <app-edit-card></app-edit-card>
+  <div class="box">
+    <app-edit-card></app-edit-card>
+  </div>
+  <div class="container" *ngFor="let article of articles">
+    <app-card [article]="article" (removeCard)="removeCard(article.id)" (editCard)="editCard(article.id)" (clearEdit)="clear()" ></app-card>
+  </div>
 </div>
-<div *ngFor="let article of articles">
-  <app-card [article]="article" (removeCard)="removeCard(article.id)" (editCard)="editCard(article.id)" (clearEdit)="clear()" ></app-card>
-</div>
+

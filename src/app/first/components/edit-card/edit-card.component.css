@@ -1,0 +1,25 @@
+.form-card{
+    width: 30%;
+    margin: 0px auto;
+    margin-top: 30px;
+    margin-bottom: 50px;
+
+}
+
+.form-card__container{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+}
+
+.form-card__item{
+    width: 90%;
+    margin: 0px auto;
+
+}
+
+.form-card__actions-container{
+    display: flex;
+
+}
